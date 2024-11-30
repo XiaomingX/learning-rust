@@ -4,162 +4,145 @@
 
 </div>
 
-Greetings and welcome to Rustlings.
-This project contains small exercises to get you used to reading and writing Rust code.
-This includes reading and responding to compiler messages!
+欢迎来到 Rustlings 项目！
+这个项目包含了一些小练习，帮助你熟悉阅读和编写 Rust 代码，同时学习如何理解编译器的反馈。
 
-It is recommended to do the Rustlings exercises in parallel to reading [the official Rust book](https://doc.rust-lang.org/book/), the most comprehensive resource for learning Rust 📚️
+我们建议你在学习 [官方 Rust 教程](https://doc.rust-lang.org/book/) 的同时，做 Rustlings 练习。官方教程是学习 Rust 的最全面的资源 📚️
 
-[Rust By Example](https://doc.rust-lang.org/rust-by-example/) is another recommended resource that you might find helpful.
-It contains code examples and exercises similar to Rustlings, but online.
+另一个推荐的资源是 [Rust By Example](https://doc.rust-lang.org/rust-by-example/)，它包含了与 Rustlings 类似的代码示例和在线练习。
 
-## Getting Started
+## 开始之前
 
-### Installing Rust
+### 安装 Rust
 
-Before installing Rustlings, you need to have the **latest version of Rust** installed.
-Visit [www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) for further instructions on installing Rust.
-This will also install _Cargo_, Rust's package/project manager.
+在安装 Rustlings 之前，你需要先安装 **最新版本的 Rust**。
+请访问 [www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install) 按照说明进行安装。
+这个过程也会安装 _Cargo_，Rust 的包管理器和项目管理工具。
 
-> 🐧 If you're on Linux, make sure you've installed `gcc` (for a linker).
->
-> Deb: `sudo apt install gcc`.
-> Dnf: `sudo dnf install gcc`.
+> 🐧 如果你使用的是 Linux，确保你已经安装了 `gcc`（链接器）。  
+> 你可以使用以下命令安装：  
+> Deb: `sudo apt install gcc`  
+> Dnf: `sudo dnf install gcc`  
 
-> 🍎 If you're on MacOS, make sure you've installed Xcode and its developer tools by running `xcode-select --install`.
+> 🍎 如果你使用的是 macOS，确保你已经安装了 Xcode 以及其开发工具，可以通过运行 `xcode-select --install` 来安装。
 
-### Installing Rustlings
+### 安装 Rustlings
 
-The following command will download and compile Rustlings:
+执行以下命令来下载并编译 Rustlings：
 
 ```bash
 cargo install rustlings
 ```
 
 <details>
-<summary><strong>If the installation fails…</strong> (<em>click to expand</em>)</summary>
+<summary><strong>如果安装失败...</strong> (<em>点击展开</em>)</summary>
 
-- Make sure you have the latest Rust version by running `rustup update`
-- Try adding the `--locked` flag: `cargo install rustlings --locked`
-- Otherwise, please [report the issue](https://github.com/rust-lang/rustlings/issues/new)
+- 请确保你的 Rust 版本是最新的，使用 `rustup update` 来更新。
+- 如果遇到问题，可以尝试添加 `--locked` 标志：`cargo install rustlings --locked`
+- 如果问题依然存在，请 [报告问题](https://github.com/rust-lang/rustlings/issues/new)
 
 </details>
 
-### Initialization
+### 初始化
 
-After installing Rustlings, run the following command to initialize the `rustlings/` directory:
+安装完成后，执行以下命令来初始化 `rustlings/` 目录：
 
 ```bash
 rustlings init
 ```
 
 <details>
-<summary><strong>If the command <code>rustlings</code> can't be found…</strong> (<em>click to expand</em>)</summary>
+<summary><strong>如果找不到 <code>rustlings</code> 命令...</strong> (<em>点击展开</em>)</summary>
 
-You are probably using Linux and installed Rust using your package manager.
+如果你使用 Linux 并通过包管理器安装了 Rust，可能遇到这个问题。
 
-Cargo installs binaries to the directory `~/.cargo/bin`.
-Sadly, package managers often don't add `~/.cargo/bin` to your `PATH` environment variable.
+Cargo 会将二进制文件安装到 `~/.cargo/bin` 目录。  
+但很多包管理器并不会自动将该目录添加到 `PATH` 环境变量中。
 
-The solution is to …
+解决方法是：
 
-- either add `~/.cargo/bin` manually to `PATH`
-- or to uninstall Rust from the package manager and install it using the official way with `rustup`: https://www.rust-lang.org/tools/install
+- 手动将 `~/.cargo/bin` 添加到 `PATH` 中，或者
+- 卸载通过包管理器安装的 Rust，并使用官方的 `rustup` 工具重新安装： [安装 Rust](https://www.rust-lang.org/tools/install)
 
 </details>
 
-Now, go into the newly initialized directory and launch Rustlings for further instructions on getting started with the exercises:
+初始化完成后，进入新创建的目录并启动 Rustlings，开始练习：
 
 ```bash
 cd rustlings/
 rustlings
 ```
 
-## Working environment
+## 开发环境
 
-### Editor
+### 编辑器
 
-Our general recommendation is [VS Code](https://code.visualstudio.com/) with the [rust-analyzer plugin](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer).
-But any editor that supports [rust-analyzer](https://rust-analyzer.github.io/) should be enough for working on the exercises.
+我们推荐使用 [VS Code](https://code.visualstudio.com/) 编辑器，并安装 [rust-analyzer 插件](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)。  
+不过任何支持 [rust-analyzer](https://rust-analyzer.github.io/) 的编辑器都可以用来完成练习。
 
-### Terminal
+### 终端
 
-While working with Rustlings, please use a modern terminal for the best user experience.
-The default terminal on Linux and Mac should be sufficient.
-On Windows, we recommend the [Windows Terminal](https://aka.ms/terminal).
+为了获得最佳体验，建议使用现代终端。Linux 和 macOS 默认的终端应该就足够了。  
+在 Windows 上，我们推荐使用 [Windows Terminal](https://aka.ms/terminal)。
 
-## Doing exercises
+## 完成练习
 
-The exercises are sorted by topic and can be found in the subdirectory `exercises/<topic>`.
-For every topic, there is an additional `README.md` file with some resources to get you started on the topic.
-We highly recommend that you have a look at them before you start 📚️
+这些练习按主题分类，存放在 `exercises/<topic>` 子目录下。每个主题都有一个附带的 `README.md` 文件，里面包含了一些资源，帮助你快速上手。我们建议你在开始之前先阅读这些资源 📚️
 
-Most exercises contain an error that keeps them from compiling, and it's up to you to fix it!
-Some exercises contain tests that need to pass for the exercise to be done ✅
+大部分练习中都会有一个错误，导致代码无法编译，你的任务就是修复它！  
+一些练习中还包含了需要通过的测试，表示练习已经完成 ✅
 
-Search for `TODO` and `todo!()` to find out what you need to change.
-Ask for hints by entering `h` in the _watch mode_ 💡
+查找 `TODO` 或 `todo!()`，了解需要修改的地方。  
+在 _监视模式_ 中按 `h` 获取提示 💡
 
-### Watch Mode
+### 监视模式
 
-After [initialization](#initialization), Rustlings can be launched by simply running the command `rustlings`.
+安装完成后，可以通过运行 `rustlings` 启动 Rustlings。
 
-This will start the _watch mode_ which walks you through the exercises in a predefined order (what we think is best for newcomers).
-It will rerun the current exercise automatically every time you change the exercise's file in the `exercises/` directory.
+它将进入 _监视模式_，按照预定顺序引导你完成练习（我们认为这是最适合新手的顺序）。  
+每当你修改 `exercises/` 目录下的文件时，它会自动重新运行当前练习。
 
 <details>
-<summary><strong>If detecting file changes in the <code>exercises/</code> directory fails…</strong> (<em>click to expand</em>)</summary>
+<summary><strong>如果无法检测到文件更改...</strong> (<em>点击展开</em>)</summary>
 
-> You can add the **`--manual-run`** flag (`rustlings --manual-run`) to manually rerun the current exercise by entering `r` in the watch mode.
+> 你可以添加 `--manual-run` 标志（`rustlings --manual-run`），进入手动模式，通过按 `r` 来手动重新运行当前练习。
 >
-> Please [report the issue](https://github.com/rust-lang/rustlings/issues/new) with some information about your operating system and whether you run Rustlings in a container or virtual machine (e.g. WSL).
+> 如果你遇到问题，请 [报告问题](https://github.com/rust-lang/rustlings/issues/new)，并提供你的操作系统信息，以及是否在容器或虚拟机（例如 WSL）中运行 Rustlings。
 
 </details>
 
-### Exercise List
+### 练习列表
 
-In the [watch mode](#watch-mode) (after launching `rustlings`), you can enter `l` to open the interactive exercise list.
+在 [监视模式](#监视模式) 中（启动 `rustlings` 后），可以按 `l` 打开交互式练习列表。
 
-The list allows you to…
+列表中可以查看每个练习的状态（已完成或待完成），并可以执行以下操作：
 
-- See the status of all exercises (done or pending)
-- `c`: Continue at another exercise (temporarily skip some exercises or go back to a previous one)
-- `r`: Reset status and file of the selected exercise (you need to _reload/reopen_ its file in your editor afterwards)
+- `c`：跳转到其他练习（跳过某些练习或回到之前的练习）
+- `r`：重置选定练习的状态和文件（之后需要在编辑器中重新打开该文件）
 
-See the footer of the list for all possible keys.
+你还可以查看列表底部的所有可用快捷键。
 
-## Questions?
+## 有问题？
 
-If you need any help while doing the exercises and the builtin-hints aren't helpful, feel free to ask in the [_Q&A_ category of the discussions](https://github.com/rust-lang/rustlings/discussions/categories/q-a?discussions_q=) if your question wasn't asked yet 💡
+如果在做练习过程中遇到困难，而内置提示无法解决你的问题，欢迎在 [讨论区的 _Q&A_ 分类](https://github.com/rust-lang/rustlings/discussions/categories/q-a?discussions_q=) 提问。
 
-## Third-Party Exercises
+## 第三方练习
 
-Third-party exercises are a set of exercises maintained by the community.
-You can use the same `rustlings` program that you installed with `cargo install rustlings` to run them:
+第三方练习是由社区维护的练习集。你可以继续使用通过 `cargo install rustlings` 安装的 `rustlings` 程序来运行这些练习：
 
-- [日本語版 Rustlings](https://github.com/sotanengel/rustlings-jp)：A Japanese translation of the Rustlings exercises.
+- [日本语版 Rustlings](https://github.com/sotanengel/rustlings-jp)：Rustlings 的日文翻译版本。
 
-Do you want to create your own set of Rustlings exercises to focus on some specific topic?
-Or do you want to translate the original Rustlings exercises?
-Then follow the the guide about [third-party exercises](https://github.com/rust-lang/rustlings/blob/main/THIRD_PARTY_EXERCISES.md)!
+想要创建自己的 Rustlings 练习集吗？  
+或者想翻译原版的 Rustlings 练习？请参考 [第三方练习指南](https://github.com/rust-lang/rustlings/blob/main/THIRD_PARTY_EXERCISES.md)。
 
-## Continuing On
+## 继续前进
 
-Once you've completed Rustlings, put your new knowledge to good use!
-Continue practicing your Rust skills by building your own projects, contributing to Rustlings, or finding other open-source projects to contribute to.
+完成 Rustlings 后，可以通过构建自己的项目、贡献代码到 Rustlings 或者参与其他开源项目来继续提高 Rust 技能。
 
-## Uninstalling Rustlings
+## 卸载 Rustlings
 
-If you want to remove Rustlings from your system, run the following command:
+如果你想卸载 Rustlings，可以运行以下命令：
 
 ```bash
 cargo uninstall rustlings
 ```
-
-## Contributing
-
-See [CONTRIBUTING.md](https://github.com/rust-lang/rustlings/blob/main/CONTRIBUTING.md) 🔗
-
-## Contributors ✨
-
-Thanks to [all the wonderful contributors](https://github.com/rust-lang/rustlings/graphs/contributors) 🎉
