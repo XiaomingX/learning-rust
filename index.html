@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" id="oranda" class="dark">
+    <head>
+        <title>rustlings</title>
+        
+            <meta property="og:url" content="https://rustlings.cool" />
+        
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+            <meta name="description" content="Small exercises to get you used to reading and writing Rust code!" />
+            <meta property="og:description" content="Small exercises to get you used to reading and writing Rust code!" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="rustlings" />
+        
+        
+        
+        <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
+        <link rel="stylesheet" href="/oranda-v0.3.1.css" />
+        
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="page-body">
+                
+                    <div class="repo_banner">
+                        <a href="https://github.com/rust-lang/rustlings">
+                            <div class="github-icon" aria-hidden="true"></div>
+                            Check out our GitHub!
+                        </a>
+                    </div>
+                
+
+                <main>
+                    <header>
+                        
+                        <h1 class="title">rustlings</h1>
+                        
+    <nav class="nav">
+        <ul>
+            <li><a href="/">Home</a></li>
+
+            
+
+            
+
+            
+
+            
+
+            
+                <li><a href="/changelog/">Changelog</a></li>
+            
+        </ul>
+    </nav>
+
+                    </header>
+
+                    
+
+<div class="oranda-hide">
+<h1>Rustlings 🦀❤️</h1>
+</div>
+<p>欢迎来到 Rustlings 项目！
+这个项目包含了一些小练习，帮助你熟悉阅读和编写 Rust 代码，同时学习如何理解编译器的反馈。</p>
+<p>我们建议你在学习 <a href="https://doc.rust-lang.org/book/" rel="noopener noreferrer">官方 Rust 教程</a> 的同时，做 Rustlings 练习。官方教程是学习 Rust 的最全面的资源 📚️</p>
+<p>另一个推荐的资源是 <a href="https://doc.rust-lang.org/rust-by-example/" rel="noopener noreferrer">Rust By Example</a>，它包含了与 Rustlings 类似的代码示例和在线练习。</p>
+<h2>开始之前</h2>
+<h3>安装 Rust</h3>
+<p>在安装 Rustlings 之前，你需要先安装 <strong>最新版本的 Rust</strong>。
+请访问 <a href="https://www.rust-lang.org/tools/install" rel="noopener noreferrer">www.rust-lang.org/tools/install</a> 按照说明进行安装。
+这个过程也会安装 <em>Cargo</em>，Rust 的包管理器和项目管理工具。</p>
+<blockquote>
+<p>🐧 如果你使用的是 Linux，确保你已经安装了 <code>gcc</code>（链接器）。<br>
+你可以使用以下命令安装：<br>
+Deb: <code>sudo apt install gcc</code><br>
+Dnf: <code>sudo dnf install gcc</code></p>
+</blockquote>
+<blockquote>
+<p>🍎 如果你使用的是 macOS，确保你已经安装了 Xcode 以及其开发工具，可以通过运行 <code>xcode-select --install</code> 来安装。</p>
+</blockquote>
+<h3>安装 Rustlings</h3>
+<p>执行以下命令来下载并编译 Rustlings：</p>
+<pre style="background-color:#263238;"><span style="color:#82aaff;">cargo install rustlings
+</span></pre>
+
+<details>
+<summary><strong>如果安装失败...</strong> (<em>点击展开</em>)</summary>
+<ul>
+<li>请确保你的 Rust 版本是最新的，使用 <code>rustup update</code> 来更新。</li>
+<li>如果遇到问题，可以尝试添加 <code>--locked</code> 标志：<code>cargo install rustlings --locked</code></li>
+<li>如果问题依然存在，请 <a href="https://github.com/rust-lang/rustlings/issues/new" rel="noopener noreferrer">报告问题</a></li>
+</ul>
+</details>
+<h3>初始化</h3>
+<p>安装完成后，执行以下命令来初始化 <code>rustlings/</code> 目录：</p>
+<pre style="background-color:#263238;"><span style="color:#82aaff;">rustlings init
+</span></pre>
+
+<details>
+<summary><strong>如果找不到 <code>rustlings</code> 命令...</strong> (<em>点击展开</em>)</summary>
+<p>如果你使用 Linux 并通过包管理器安装了 Rust，可能遇到这个问题。</p>
+<p>Cargo 会将二进制文件安装到 <code>~/.cargo/bin</code> 目录。<br>
+但很多包管理器并不会自动将该目录添加到 <code>PATH</code> 环境变量中。</p>
+<p>解决方法是：</p>
+<ul>
+<li>手动将 <code>~/.cargo/bin</code> 添加到 <code>PATH</code> 中，或者</li>
+<li>卸载通过包管理器安装的 Rust，并使用官方的 <code>rustup</code> 工具重新安装： <a href="https://www.rust-lang.org/tools/install" rel="noopener noreferrer">安装 Rust</a></li>
+</ul>
+</details>
+<p>初始化完成后，进入新创建的目录并启动 Rustlings，开始练习：</p>
+<pre style="background-color:#263238;"><span style="color:#82aaff;">cd rustlings/
+</span><span style="color:#82aaff;">rustlings
+</span></pre>
+
+<h2>开发环境</h2>
+<h3>编辑器</h3>
+<p>我们推荐使用 <a href="https://code.visualstudio.com/" rel="noopener noreferrer">VS Code</a> 编辑器，并安装 <a href="https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer" rel="noopener noreferrer">rust-analyzer 插件</a>。<br>
+不过任何支持 <a href="https://rust-analyzer.github.io/" rel="noopener noreferrer">rust-analyzer</a> 的编辑器都可以用来完成练习。</p>
+<h3>终端</h3>
+<p>为了获得最佳体验，建议使用现代终端。Linux 和 macOS 默认的终端应该就足够了。<br>
+在 Windows 上，我们推荐使用 <a href="https://aka.ms/terminal" rel="noopener noreferrer">Windows Terminal</a>。</p>
+<h2>完成练习</h2>
+<p>这些练习按主题分类，存放在 <code>exercises/&lt;topic&gt;</code> 子目录下。每个主题都有一个附带的 <code>README.md</code> 文件，里面包含了一些资源，帮助你快速上手。我们建议你在开始之前先阅读这些资源 📚️</p>
+<p>大部分练习中都会有一个错误，导致代码无法编译，你的任务就是修复它！<br>
+一些练习中还包含了需要通过的测试，表示练习已经完成 ✅</p>
+<p>查找 <code>TODO</code> 或 <code>todo!()</code>，了解需要修改的地方。<br>
+在 <em>监视模式</em> 中按 <code>h</code> 获取提示 💡</p>
+<h3>监视模式</h3>
+<p>安装完成后，可以通过运行 <code>rustlings</code> 启动 Rustlings。</p>
+<p>它将进入 <em>监视模式</em>，按照预定顺序引导你完成练习（我们认为这是最适合新手的顺序）。<br>
+每当你修改 <code>exercises/</code> 目录下的文件时，它会自动重新运行当前练习。</p>
+<details>
+<summary><strong>如果无法检测到文件更改...</strong> (<em>点击展开</em>)</summary>
+<blockquote>
+<p>你可以添加 <code>--manual-run</code> 标志（<code>rustlings --manual-run</code>），进入手动模式，通过按 <code>r</code> 来手动重新运行当前练习。</p>
+<p>如果你遇到问题，请 <a href="https://github.com/rust-lang/rustlings/issues/new" rel="noopener noreferrer">报告问题</a>，并提供你的操作系统信息，以及是否在容器或虚拟机（例如 WSL）中运行 Rustlings。</p>
+</blockquote>
+</details>
+<h3>练习列表</h3>
+<p>在 <a href="#%E7%9B%91%E8%A7%86%E6%A8%A1%E5%BC%8F" rel="noopener noreferrer">监视模式</a> 中（启动 <code>rustlings</code> 后），可以按 <code>l</code> 打开交互式练习列表。</p>
+<p>列表中可以查看每个练习的状态（已完成或待完成），并可以执行以下操作：</p>
+<ul>
+<li><code>c</code>：跳转到其他练习（跳过某些练习或回到之前的练习）</li>
+<li><code>r</code>：重置选定练习的状态和文件（之后需要在编辑器中重新打开该文件）</li>
+</ul>
+<p>你还可以查看列表底部的所有可用快捷键。</p>
+<h2>有问题？</h2>
+<p>如果在做练习过程中遇到困难，而内置提示无法解决你的问题，欢迎在 <a href="https://github.com/rust-lang/rustlings/discussions/categories/q-a?discussions_q=" rel="noopener noreferrer">讨论区的 <em>Q&amp;A</em> 分类</a> 提问。</p>
+<h2>第三方练习</h2>
+<p>第三方练习是由社区维护的练习集。你可以继续使用通过 <code>cargo install rustlings</code> 安装的 <code>rustlings</code> 程序来运行这些练习：</p>
+<ul>
+<li><a href="https://github.com/sotanengel/rustlings-jp" rel="noopener noreferrer">日本语版 Rustlings</a>：Rustlings 的日文翻译版本。</li>
+</ul>
+<p>想要创建自己的 Rustlings 练习集吗？<br>
+或者想翻译原版的 Rustlings 练习？请参考 <a href="https://github.com/rust-lang/rustlings/blob/main/THIRD_PARTY_EXERCISES.md" rel="noopener noreferrer">第三方练习指南</a>。</p>
+<h2>继续前进</h2>
+<p>完成 Rustlings 后，可以通过构建自己的项目、贡献代码到 Rustlings 或者参与其他开源项目来继续提高 Rust 技能。</p>
+<h2>卸载 Rustlings</h2>
+<p>如果你想卸载 Rustlings，可以运行以下命令：</p>
+<pre style="background-color:#263238;"><span style="color:#82aaff;">cargo uninstall rustlings
+</span></pre>
+
+
+
+                </main>
+            </div>
+
+            <footer>
+                
+                    <a href="https://github.com/rust-lang/rustlings"><div class="github-icon" aria-hidden="true"></div></a>
+                
+                <span>
+                    rustlings, MIT
+                </span>
+            </footer>
+        </div>
+
+        
+            <script defer="true" data-domain="rustlings.cool" src="https://plausible.io/js/script.js"></script>
+        
+        
+
+        
+
+
+    </body>
+</html>
